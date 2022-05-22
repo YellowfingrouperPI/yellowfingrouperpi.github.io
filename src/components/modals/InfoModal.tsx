@@ -31,7 +31,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="N" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        A great place to be. That O is right where is should be!
+        A great place to be. That O is in the correct spot!
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -58,13 +58,22 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="O" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        One of my regulars! That B? It's not in the word, though!
+        One of my regulars! That B? It's not in the word!
       </p>
 
       <br />
       <p className="text-sm text-gray-500 dark:text-gray-300">
         Now take your time and enjoy! Ha-Cha!
       </p>
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.yellowfingrouperpi.com/"
+      >
+        <p className="text-sm dark:text-gray-300 font-bold">
+          Presented by Yellowfin Grouper, P.I. LIVE
+        </p>
+      </a>
     </BaseModal>
   )
 }
