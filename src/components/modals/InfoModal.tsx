@@ -67,7 +67,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
       <a
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         href="https://www.yellowfingrouperpi.com/"
       >
         <p className="text-sm dark:text-gray-300 font-bold">
