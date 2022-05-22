@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --real100vh: 100vh;
   --animation-speed: 1000ms;
   --animation-speed-fast: 250ms;
   --default-cell-bg-color: theme('colors.white');

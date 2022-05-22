@@ -40,6 +40,7 @@ import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
 import { isInAppBrowser } from './lib/browser'
+import useWindowDimensions from './hooks/useWindowDimensions'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -148,6 +149,17 @@ function App() {
     setCurrentRowClass('')
   }
 
+  const { width } = useWindowDimensions()
+  // calculate actual view height (fixes chrome scroll bug re url bar)
+  useEffect(() => {
+    // If less than most tablets, set CSS var to window height.
+    let value = '100vh'
+    if (width <= 1024) {
+      value = `${window.innerHeight}px`
+    }
+    document.documentElement.style.setProperty('--real100vh', value)
+  }, [width])
+
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
   }, [guesses])
@@ -250,13 +262,13 @@ function App() {
   }
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-dynamic flex flex-col">
       <Navbar
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
       />
-      <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
+      <div className="pt-8 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6 grow">
           <Grid
             solution={solution}
