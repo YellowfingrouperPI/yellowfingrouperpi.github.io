@@ -93,7 +93,8 @@ export const getWordOfDay = () => {
     solution: localeAwareUpperCase(WORDS[index % WORDS.length]),
     solutionIndex: index,
     tomorrow: nextDay.valueOf(),
+    showtime: new Date('2022-06-05T19:00:00.000-04:00'),
   }
 }
 
-export const { solution, solutionIndex, tomorrow } = getWordOfDay()
+export const { solution, solutionIndex, tomorrow, showtime } = getWordOfDay()

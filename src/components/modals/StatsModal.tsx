@@ -3,7 +3,7 @@ import { StatBar } from '../stats/StatBar'
 import { Histogram } from '../stats/Histogram'
 import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
-import { tomorrow } from '../../lib/words'
+import { tomorrow, showtime } from '../../lib/words'
 import { BaseModal } from './BaseModal'
 import {
   STATISTICS_TITLE,
@@ -41,61 +41,62 @@ export const StatsModal = ({
   isHighContrastMode,
   numberOfGuessesMade,
 }: Props) => {
-  if (gameStats.totalGames <= 0) {
-    return (
-      <BaseModal
-        title={STATISTICS_TITLE}
-        isOpen={isOpen}
-        handleClose={handleClose}
-      >
-        <StatBar gameStats={gameStats} />
-      </BaseModal>
-    )
-  }
+  // if (gameStats.totalGames <= 0) {
+  //   return (
+  //     <BaseModal
+  //       title={STATISTICS_TITLE}
+  //       isOpen={isOpen}
+  //       handleClose={handleClose}
+  //     >
+  //       {/* <StatBar gameStats={gameStats} /> */}
+  //     </BaseModal>
+  //   )
+  // }
   return (
     <BaseModal
       title={STATISTICS_TITLE}
       isOpen={isOpen}
       handleClose={handleClose}
     >
-      <StatBar gameStats={gameStats} />
-      <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
+      {/* <StatBar gameStats={gameStats} /> */}
+      {/* <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         {GUESS_DISTRIBUTION_TEXT}
       </h4>
       <Histogram
         gameStats={gameStats}
         isGameWon={isGameWon}
         numberOfGuessesMade={numberOfGuessesMade}
-      />
-      {(isGameLost || isGameWon) && (
-        <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
-          <div>
-            <h5>{NEW_WORD_TEXT}</h5>
-            <Countdown
-              className="text-lg font-medium text-gray-900 dark:text-gray-100"
-              date={tomorrow}
-              daysInHours={true}
-            />
-          </div>
+      /> */}
+      {/* {(isGameLost || isGameWon) && ( */}
+      <a href="https://web.ovationtix.com/trs/pe.c/11080171" target="_blank">
+        <img width="100%" src="/logo.jpg" />
+      </a>
+      <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
+        <div>
+          <h5>{NEW_WORD_TEXT}</h5>
+          <Countdown
+            className="text-lg font-medium text-gray-900 dark:text-gray-100"
+            date={showtime}
+            daysInHours={false}
+            renderer={({ hours, minutes, seconds, days }) => {
+              return (
+                <span>
+                  {days}d {hours}h {minutes}m {seconds}s
+                </span>
+              )
+            }}
+          />
+        </div>
+        <a href="https://web.ovationtix.com/trs/pe.c/11080171" target="_blank">
           <button
             type="button"
             className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-            onClick={() => {
-              shareStatus(
-                solution,
-                guesses,
-                isGameLost,
-                isHardMode,
-                isDarkMode,
-                isHighContrastMode,
-                handleShareToClipboard
-              )
-            }}
           >
             {SHARE_TEXT}
           </button>
-        </div>
-      )}
+        </a>
+      </div>
+      {/* )} */}
     </BaseModal>
   )
 }

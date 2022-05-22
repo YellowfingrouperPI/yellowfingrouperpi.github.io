@@ -60,6 +60,7 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
                   <Dialog.Title
                     as="h3"
                     className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
+                    style={{ whiteSpace: 'break-spaces' }}
                   >
                     {title}
                   </Dialog.Title>
