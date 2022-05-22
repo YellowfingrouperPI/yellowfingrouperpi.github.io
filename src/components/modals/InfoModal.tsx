@@ -8,53 +8,62 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title="Welcome to Turtle Wordle! 🐢"
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the word in 6 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the word.
+        Well slow down there, whippersnapper. You have 6 tries to guess the
+        word. Try to make all the letters green, just like me!
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="W"
+          value="O"
           status="correct"
         />
+        <Cell value="C" />
         <Cell value="E" />
         <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
+        <Cell value="N" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        A great place to be. That O is right where is should be!
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="I" />
+        <Cell value="S" />
+        <Cell value="H" />
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="L"
+          value="A"
           status="present"
         />
-        <Cell value="O" />
-        <Cell value="T" />
+        <Cell value="R" />
+        <Cell value="K" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        Where!? Oh, right. The A is somewhere, just not there!
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="V" />
-        <Cell value="A" />
-        <Cell value="G" />
-        <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
-        <Cell value="E" />
+        <Cell value="J" />
+        <Cell value="U" />
+        <Cell value="M" />
+        <Cell isRevealing={true} isCompleted={true} value="B" status="absent" />
+        <Cell value="O" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        One of my regulars! That B? It's not in the word, though!
+      </p>
+
+      <br />
+      <p className="text-sm text-gray-500 dark:text-gray-300">
+        Now take your time and enjoy! Ha-Cha!
       </p>
     </BaseModal>
   )
