@@ -13,4 +13,7 @@ export const WORDS = [
   'shark',
   'guppy',
   'brine',
+  'salty',
+  'water',
+  'fresh',
 ]
