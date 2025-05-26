@@ -25,11 +25,10 @@ export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Guess must contain ${letter}`
 export const ENTER_TEXT = 'Enter'
 export const DELETE_TEXT = 'Delete'
-export const STATISTICS_TITLE =
-  'Tickets are now on sale for\nYellowfin Grouper, P.I. LIVE'
+export const STATISTICS_TITLE = 'SEASON 2 NOW STREAMING'
 export const GUESS_DISTRIBUTION_TEXT = 'Guess Distribution'
 export const NEW_WORD_TEXT = 'Showtime in'
-export const SHARE_TEXT = 'Buy Tickets'
+export const SHARE_TEXT = 'LISTEN NOW'
 export const TOTAL_TRIES_TEXT = 'Total tries'
 export const SUCCESS_RATE_TEXT = 'Success rate'
 export const CURRENT_STREAK_TEXT = 'Current streak'
